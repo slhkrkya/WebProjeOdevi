@@ -5,12 +5,12 @@
     <title th:text="${pageTitle}">Üyelikler</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <!-- Navbar -->
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 <div th:replace="~{fragments/scripts :: scripts}"></div>
-<div class="container mt-5">
+<div class="container mt-5 flex-grow-1">
     <h3 class="mb-4">Tüm Üyelikler</h3>
     <a th:href="@{/admin/membership/add}" class="btn btn-success mb-3">+ Yeni Üyelik Ekle</a>
 

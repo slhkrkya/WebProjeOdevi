@@ -1,52 +1,121 @@
-/* login.css */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    width: 100%;
+    height: 93.5vh;
+    background: url('https://meslekburda.com/backend/uploads/d8f3dcd0790f42ff5ddb7320da3c877e.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.login-container {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    width: 350px;
+.login-box {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
 }
 
-.login-container h2 {
+h2 {
+    font-size: 2em;
+    color: #fff;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+.input-box {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
 }
 
-.login-container button {
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
     width: 100%;
-    padding: 10px;
-    background-color: #4facfe;
-    color: white;
+    height: 50px;
+    background: transparent;
     border: none;
-    border-radius: 6px;
+    outline: none;
+    font-size: 1em;
+    color: #fff;   
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+
+button {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
     cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
 }
 
-.login-container button:hover {
-    background-color: #00c6ff;
-}
-
-.login-container p {
+.register-link {
+    font-size: .9em;
+    color: #fff;
     text-align: center;
-    margin-top: 15px;
+    margin: 25px 0px 10px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #212529;
+    color: #fff;
+    margin-top: auto;
+    z-index: 1;
+    position: relative;
 }

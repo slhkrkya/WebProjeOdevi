@@ -6,13 +6,13 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" />
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <!-- Navbar -->
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 <div th:replace="~{fragments/scripts :: scripts}"></div>
 
-<div class="container mt-5">
+<div class="container mt-5 flex-grow-1">
     <h2 class="text-center mb-4">Tüm Üyelik Paketleri</h2>
 
     <!-- Filtre Formu -->
@@ -67,6 +67,6 @@
 </div>
 
 <!-- Footer -->
-<div th:replace="~{fragments/footer :: footer}"></div>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
 </body>
 </html>

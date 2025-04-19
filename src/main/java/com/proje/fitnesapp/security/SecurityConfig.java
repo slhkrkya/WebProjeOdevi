@@ -17,7 +17,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**", "/css/**", "/js/**", "/images/**").permitAll()
+                        .requestMatchers("/auth/**", "/css/**", "/js/**", "/images/**", "/login.css", "/register.css").permitAll()
 
                         // Admin paneli sadece ADMIN rolüne açık
                         .requestMatchers("/admin/**").hasRole("ADMIN")

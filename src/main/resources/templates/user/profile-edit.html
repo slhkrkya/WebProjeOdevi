@@ -5,12 +5,12 @@
     <title>Profil Düzenle</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 <div th:replace="~{fragments/scripts :: scripts}"></div>
 
-<div class="container mt-5">
+<div class="container mt-5 flex-grow-1">
     <h2 class="mb-4 text-center">👤 Profil Bilgilerini Güncelle</h2>
 
     <form th:action="@{/profile/edit}" th:object="${userUpdateDto}" method="post" enctype="multipart/form-data" class="shadow p-4 rounded bg-light">

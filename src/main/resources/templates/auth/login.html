@@ -1,61 +1,35 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giriş Yap</title>
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-    <style>
-        body {
-            background: #f8f9fa;
-        }
-        .login-card {
-            max-width: 420px;
-            margin: auto;
-            margin-top: 80px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            background: #fff;
-        }
-        .form-control:focus {
-            box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{/login.css}">
 </head>
-<body>
-
-<div class="login-card">
-    <h3 class="text-center mb-4">🔐 Giriş Yap</h3>
-
-    <!-- Hata / Bilgi Mesajları -->
-    <div th:if="${param.error}" class="alert alert-danger">
-        ❌ Hatalı e-posta veya şifre!
+<body class="d-flex flex-column min-vh-100">
+<section>
+    <div class="login-box">
+        <form th:action="@{/auth/login}" method="post">
+            <h2>Giriş Yap!</h2>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" name="username" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" name="password" id="password" required>
+                <label for="password">Şifre</label>
+            </div>
+            <button type="submit">Giriş Yap</button>
+            <div class="register-link">
+                <p>Hesabın mı yok?<a th:href="@{/auth/register}"> Kayıt ol!</a></p>
+            </div>
+        </form>
     </div>
-    <div th:if="${param.logout}" class="alert alert-success">
-        ✅ Başarıyla çıkış yapıldı.
-    </div>
-
-    <!-- Giriş Formu -->
-    <form method="post" th:action="@{/auth/login}">
-        <div class="mb-3">
-            <label for="email">📧 E-posta</label>
-            <input type="text" name="username" class="form-control" id="email" placeholder="E-posta adresi" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="password">🔑 Şifre</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Şifre" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100">➡️ Giriş Yap</button>
-    </form>
-
-    <div class="text-center mt-3">
-        <a th:href="@{/auth/register}">Hesabınız yok mu? <strong>Kayıt olun</strong></a>
-    </div>
-</div>
-
-<!-- Bootstrap JS (Dropdown veya Collapse için) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</section>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

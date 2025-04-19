@@ -4,9 +4,11 @@ import com.proje.fitnesapp.dto.PasswordChangeDto;
 import com.proje.fitnesapp.dto.UserRegisterDto;
 import com.proje.fitnesapp.dto.UserUpdateDto;
 import com.proje.fitnesapp.model.User;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
+@Service
 public interface UserService {
     void register(UserRegisterDto dto) throws IOException;
     User findByEmail(String email);

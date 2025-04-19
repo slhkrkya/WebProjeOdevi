@@ -5,13 +5,13 @@
     <title th:text="${pageTitle}">Üyelik Detayı</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <!-- Navbar -->
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 <div th:replace="~{fragments/scripts :: scripts}"></div>
 
-<div class="container mt-5">
+<div class="container mt-5 flex-grow-1">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div th:if="${param.error}" class="alert alert-danger text-center" th:text="${param.error}"></div>
@@ -38,6 +38,6 @@
     </div>
 </div>
 
-<div th:replace="~{fragments/footer :: footer}"></div>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
 </body>
 </html>

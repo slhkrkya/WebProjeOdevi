@@ -5,7 +5,7 @@
     <title th:text="${pageTitle}">Profil</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <!-- Navbar -->
 <div th:replace="~{fragments/navbar :: navbar}"></div>
@@ -13,7 +13,7 @@
 <div th:if="${param.purchaseSuccess}" class="alert alert-success">
     Üyelik başarıyla satın alındı!
 </div>
-<div class="container mt-5">
+<div class="container mt-5 flex-grow-1">
     <h2 class="text-center mb-4">👤 Profil Sayfası</h2>
 
     <div class="mb-4 d-flex align-items-center">
@@ -55,6 +55,6 @@
 </div>
 
 <!-- Footer -->
-<div th:replace="~{fragments/footer :: footer}"></div>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
 </body>
 </html>

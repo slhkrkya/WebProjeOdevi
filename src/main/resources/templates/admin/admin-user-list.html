@@ -5,12 +5,12 @@
     <title th:text="${pageTitle}">Kullanıcı Listesi</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 <!-- Navbar -->
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 <div th:replace="~{fragments/scripts :: scripts}"></div>
-<div class="container mt-5">
+<div class="container mt-5 flex-grow-1">
     <h3>Kullanıcı Listesi</h3>
 
     <form method="get" action="/admin/user/list" class="mb-3 row">
